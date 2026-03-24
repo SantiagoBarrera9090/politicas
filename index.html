@@ -1,96 +1,445 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Políticas de Privacidad</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #4CAF50;
-        }
-        h2 {
-            color: #333;
-        }
-        p {
-            line-height: 1.6;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Política de Tratamiento de Datos Personales – BO-TECH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green:     #2e7d32;
+      --green-lt:  #4caf50;
+      --green-xlt: #e8f5e9;
+      --ink:       #1a1a1a;
+      --muted:     #555;
+      --line:      #d0e8d1;
+      --bg:        #f6f9f6;
+      --white:     #ffffff;
+      --shadow:    0 4px 24px rgba(46,125,50,.10);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 400;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.75;
+    }
+
+    /* ── HEADER ─────────────────────────────────────── */
+    header {
+      background: var(--green);
+      color: var(--white);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: auto;
+      padding: 18px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .logo-badge {
+      background: var(--white);
+      color: var(--green);
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 6px 14px;
+      border-radius: 4px;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+    .header-title {
+      font-family: 'Source Sans 3', sans-serif;
+      font-weight: 300;
+      font-size: .95rem;
+      opacity: .9;
+      letter-spacing: .02em;
+    }
+
+    /* ── HERO ────────────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, var(--green) 0%, #1b5e20 100%);
+      color: var(--white);
+      padding: 72px 32px 56px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      max-width: 580px;
+      margin: 0 auto;
+      font-size: 1rem;
+      opacity: .85;
+      font-weight: 300;
+    }
+    .hero-badge {
+      display: inline-block;
+      margin-top: 24px;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.35);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: .82rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* ── LAYOUT ──────────────────────────────────────── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 56px 32px 80px;
+    }
+
+    /* ── COMPANY CARD ────────────────────────────────── */
+    .company-card {
+      background: var(--white);
+      border-left: 4px solid var(--green-lt);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+      box-shadow: var(--shadow);
+    }
+    .company-card p { margin: 0; font-size: .95rem; color: var(--muted); }
+    .company-card strong { color: var(--ink); font-weight: 600; }
+
+    /* ── SECTION ─────────────────────────────────────── */
+    section {
+      margin-bottom: 44px;
+      background: var(--white);
+      border-radius: 10px;
+      padding: 32px 36px;
+      box-shadow: var(--shadow);
+      animation: fadeUp .45s ease both;
+    }
+    section:nth-child(2)  { animation-delay: .05s; }
+    section:nth-child(3)  { animation-delay: .10s; }
+    section:nth-child(4)  { animation-delay: .15s; }
+    section:nth-child(5)  { animation-delay: .20s; }
+    section:nth-child(6)  { animation-delay: .25s; }
+    section:nth-child(7)  { animation-delay: .30s; }
+    section:nth-child(8)  { animation-delay: .35s; }
+    section:nth-child(9)  { animation-delay: .40s; }
+    section:nth-child(10) { animation-delay: .45s; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-number {
+      display: inline-block;
+      background: var(--green-xlt);
+      color: var(--green);
+      font-weight: 700;
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--green);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    section p {
+      color: var(--muted);
+      font-size: .97rem;
+      margin-bottom: 12px;
+    }
+    section p:last-child { margin-bottom: 0; }
+
+    /* ── LIST ────────────────────────────────────────── */
+    ul.pill-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    ul.pill-list li {
+      background: var(--green-xlt);
+      color: var(--green);
+      font-size: .88rem;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 50px;
+      border: 1px solid var(--line);
+    }
+
+    ul.check-list {
+      list-style: none;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    ul.check-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: .97rem;
+      color: var(--muted);
+    }
+    ul.check-list li::before {
+      content: '✓';
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--green);
+      color: var(--white);
+      font-size: .75rem;
+      font-weight: 700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    /* ── TIMELINE ────────────────────────────────────── */
+    .timeline {
+      display: flex;
+      gap: 20px;
+      margin-top: 16px;
+    }
+    .timeline-item {
+      flex: 1;
+      background: var(--green-xlt);
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .timeline-item .days {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--green);
+      font-weight: 700;
+      line-height: 1;
+    }
+    .timeline-item .label {
+      font-size: .85rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ── CONTACT CARD ────────────────────────────────── */
+    .contact-card {
+      background: linear-gradient(135deg, var(--green) 0%, #1b5e20 100%);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 32px 36px;
+      margin-bottom: 44px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+    .contact-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: var(--white);
+      border: none;
+    }
+    .contact-card p { color: rgba(255,255,255,.85); font-size: .97rem; margin: 0; }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      background: var(--green);
+      color: rgba(255,255,255,.75);
+      text-align: center;
+      padding: 24px 32px;
+      font-size: .82rem;
+      letter-spacing: .03em;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 600px) {
+      .page { padding: 32px 20px 60px; }
+      section { padding: 24px 22px; }
+      .timeline { flex-direction: column; }
+      .hero { padding: 52px 20px 40px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Políticas de Privacidad</h1>
-        <p>Bienvenido a nuestra aplicación. Nos comprometemos a proteger su privacidad. Esta política de privacidad explica cómo recopilamos, usamos, y protegemos su información personal.</p>
 
-        <h2>1. Información que recopilamos</h2>
-        <p>Recopilamos información que usted nos proporciona directamente, como su nombre, dirección de correo electrónico, y cualquier otra información que decida proporcionarnos.</p>
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <span class="logo-badge">BO-TECH</span>
+    <span class="header-title">Política de Tratamiento de Datos Personales</span>
+  </div>
+</header>
 
-        <h2>2. Cómo usamos su información</h2>
-        <p>Usamos la información que recopilamos para proporcionar, mantener y mejorar nuestros servicios, para comunicarnos con usted, y para proteger a nuestros usuarios.</p>
+<!-- HERO -->
+<div class="hero">
+  <h1>Política de Tratamiento<br>de Datos Personales</h1>
+  <p>Protección y transparencia en el manejo de tu información personal dentro de la plataforma BO-TECH TRACKING.</p>
+  <span class="hero-badge">Ley 1581 de 2012 · Decreto 1377 de 2013</span>
+</div>
 
-        <h2>3. Compartir su información</h2>
-        <p>No compartimos su información personal con terceros, excepto en las siguientes circunstancias: (1) Con su consentimiento, (2) Para cumplir con leyes aplicables, o (3) Para proteger nuestros derechos.</p>
+<!-- CONTENT -->
+<div class="page">
 
-        <h2>4. Seguridad de su información</h2>
-        <p>Tomamos medidas razonables para proteger su información personal contra pérdida, robo y uso indebido, así como acceso no autorizado, divulgación, alteración y destrucción.</p>
+  <!-- INTRO -->
+  <div class="company-card">
+    <p><strong>TRANSPORTE ESCOLAR HC S.A.S.</strong>, identificada con NIT 901.573.292-0 y con domicilio en Bogotá D.C., en cumplimiento de lo dispuesto en la Ley 1581 de 2012, el Decreto 1377 de 2013 y demás normas que regulan la protección de datos personales en Colombia, adopta la presente Política de Tratamiento de Datos Personales aplicable a la plataforma <strong>BO-TECH TRACKING</strong>.</p>
+  </div>
 
-        <h2>5. Cambios a esta política</h2>
-        <p>Podemos actualizar esta política de privacidad de vez en cuando. Le notificaremos sobre cualquier cambio publicando la nueva política en esta página.</p>
+  <!-- 1 -->
+  <section>
+    <span class="section-number">Sección 01</span>
+    <h2>Responsable del Tratamiento</h2>
+    <p>El responsable del tratamiento de los datos personales es:</p>
+    <ul class="check-list">
+      <li><strong>Empresa:</strong>&nbsp;TRANSPORTE ESCOLAR HC S.A.S.</li>
+      <li><strong>NIT:</strong>&nbsp;901.573.292-0</li>
+      <li><strong>Domicilio:</strong>&nbsp;Bogotá D.C., Colombia</li>
+      <li><strong>Plataforma:</strong>&nbsp;BO-TECH TRACKING</li>
+    </ul>
+  </section>
 
-        <h2>6. Contacto</h2>
-        <p>Si tiene alguna pregunta sobre esta política de privacidad, por favor contáctenos a través de nuestro sitio web.</p>
+  <!-- 2 -->
+  <section>
+    <span class="section-number">Sección 02</span>
+    <h2>Información que Recopilamos</h2>
+    <p>La plataforma podrá recolectar información personal suministrada directamente por los usuarios, incluyendo entre otros:</p>
+    <ul class="pill-list">
+      <li>Nombre completo</li>
+      <li>Correo electrónico</li>
+      <li>Número de celular</li>
+      <li>Código de familia</li>
+      <li>Datos de ubicación</li>
+      <li>Info. del servicio escolar</li>
+    </ul>
+  </section>
 
-        <h2>1. ASPECTOS GENERALES</h2>
-        <p>Los siguientes Términos y Condiciones de Uso (en adelante “T&Cs”) regulan los Servicios de la Plataforma BO – TECH TRACKING (en adelante “BO - TECH” o “la Aplicación”) prestados por TRANSPORTE ESCOLAR HC S.A.S. (en adelante “TEHC”), sociedad constituida conforme a las leyes colombianas, identificada con NIT. 901.573.292-0, con domicilio en la ciudad de Bogotá, D.C.</p>
-        <p>El acceso y uso de la Aplicación y de su información implica que el Usuario ha leído los T&Cs y los acepta en su totalidad de forma incondicional, por lo que la usará bajo su responsabilidad, cuenta y riesgo. La no aceptación de estos T&Cs por parte del Usuario impedirá el acceso a los Servicios y se deberá abstener de usar la misma.</p>
-        <p>Cuando el Usuario utilice alguna de las secciones de la Aplicación en las que se recolecten datos personales, estará sujeto a la Política de Protección de Datos Personales, Aviso de Privacidad y a estos T&Cs en lo que resulte aplicable. Lo anterior, no significa una aceptación tácita al tratamiento de los datos, pues la Empresa tiene la obligación de garantizar en todo momento la recolección de estas autorizaciones de forma previa a la recolección de los datos.</p>
+  <!-- 3 -->
+  <section>
+    <span class="section-number">Sección 03</span>
+    <h2>Finalidad del Tratamiento de los Datos</h2>
+    <p>Los datos personales recolectados serán utilizados para las siguientes finalidades:</p>
+    <ul class="check-list">
+      <li>Registro y autenticación de usuarios en la plataforma BO-TECH.</li>
+      <li>Monitoreo en tiempo real del servicio de transporte escolar.</li>
+      <li>Mostrar la ubicación del vehículo y la distancia al paradero del estudiante.</li>
+      <li>Comunicación entre padres y coordinadores mediante BO-CHAT.</li>
+      <li>Gestión de pagos mediante el código de familia.</li>
+      <li>Mejora de la calidad del servicio ofrecido.</li>
+      <li>Cumplimiento de obligaciones legales y contractuales.</li>
+    </ul>
+  </section>
 
-        <h2>2. DEFINICIONES</h2>
-        <p>Los títulos alusivos que aparecen en los presentes T&Cs son utilizados únicamente como referencia, sin que de ellos se desprendan derechos u obligaciones. Para un mejor entendimiento de los presentes T&Cs, se emplearán las siguientes definiciones:</p>
-        <p><b>a) Autorización:</b> es el consentimiento previo, expreso e informado que otorga el Usuario al vincularse en BO - TECH, para permitir el tratamiento de sus datos.</p>
-        <p><b>b) Datos Personales:</b> es la información vinculada o que pueda asociarse a una persona determinada o determinable, incluyendo aquella suministrada por el Usuario.</p>
-        <p><b>c) Política de Privacidad:</b> es la Política de Privacidad de la Plataforma BO - TECH, aplicable a la Aplicación y al tratamiento de Datos Personales, la cual se encuentra disponible en: (***).</p>
-        <p><b>d) Aplicación:</b> aplicación de software que puede ser instalada en dispositivos móviles, teléfonos inteligentes o cualquier dispositivo electrónico, que permite al Usuario el monitoreo constante y actualizado del servicio de transporte escolar contratado. Para los efectos de este documento, será la plataforma BO – TECH, reservándose TEHC la posibilidad de renombrarla sin previo aviso.</p>
-        <p><b>e) Usuario:</b> padre (s) de Familia y/o tutor (es) responsable (s) del Estudiante, que contrata el servicio de transporte escolar prestado por TEHC.</p>
-        <p><b>f) Estudiante:</b> cualquier persona matriculada en aquellas instituciones educativas que cuenten con un convenio de prestación de servicio de transporte escolar con la empresa TEHC.</p>
-        <p><b>g) Auxiliar:</b> persona natural, mayor de edad designada por TEHC para recibir y supervisar a los Estudiantes durante el servicio de transporte escolar.</p>
-        <p><b>h) Coordinador:</b> persona natural, mayor de edad designada por la institución educativa para supervisar y coordinar la operación de los buses escolares.</p>
-        <p><b>i) Código de familia:</b> número de identificación único asignado y proporcionado por TEHC al Padre de familia para el procesamiento de pagos del servicio de transporte escolar contratado, el cual deberá efectuarse dentro de los primeros 10 días calendario del mes a través de la plataforma PSE.</p>
-        <p><b>j) Propiedad Intelectual:</b> se refiere a cualquier propiedad que se considere de naturaleza intelectual y merecedora de protección de conformidad con la norma vigente y aplicable, incluidas las invenciones científicas y tecnológicas, las producciones literarias o artísticas, las marcas y otros signos, los dibujos y modelos industriales y las indicaciones geográficas.</p>
-        <p><b>k) Personal Administrativo:</b> persona natural, mayor de edad, encargada del desarrollo de la Aplicación.</p>
-        <p><b>l) BO – CHAT:</b> función de la Aplicación que permite al Usuario comunicarse directamente con el Coordinador.</p>
+  <!-- 4 -->
+  <section>
+    <span class="section-number">Sección 04</span>
+    <h2>Autorización del Titular</h2>
+    <p>El tratamiento de los datos personales se realizará únicamente con la autorización previa, expresa e informada del titular. Esta autorización se obtiene al momento de registrarse en la aplicación BO-TECH o al suministrar los datos por cualquier medio autorizado.</p>
+  </section>
 
-        <h2>3. REGISTRO DE LOS USUARIOS</h2>
-        <p>Cuando el Usuario esté interesado en utilizar la Aplicación BO – TECH, deberá crear una cuenta diligenciando la siguiente información:</p>
-        <p><b>a)</b> Nombre completo</p>
-        <p><b>b)</b> Correo electrónico</p>
-        <p><b>c)</b> Número de celular</p>
-        <p><b>d)</b> Código de familia</p>
-        <p><b>e)</b> Contraseña</p>
-        <p>El Usuario podrá crear más de una cuenta en la Aplicación. Sin embargo, el Código de Familia únicamente podrá ser utilizado máximo en tres (3) ocasiones. El Usuario será el único habilitado y autorizado para crear la cuenta en la Aplicación.</p>
-        <p>TEHC recolectará sus Datos Personales, y solicitará la Autorización que permita su procesamiento, de manera previa, expresa e informada. La evidencia de la mencionada Autorización será conservada por TEHC.</p>
-        <p>Al utilizar la Aplicación, se solicitará acceso a la ubicación, cámara, notificaciones y galería en la medida en que sea necesario para el correcto funcionamiento y prestación del servicio. Se solicitará el acceso de la ubicación del dispositivo móvil del Usuario para un trazado del trayecto más exacto que permita visualizar en tiempo real la ubicación de los vehículos que ejecutan el servicio de transporte, así como también la distancia entre el paradero del Estudiante y el bus escolar, el cual se podrá visualizar a través de la función de mapa dispuesta en la Aplicación.</p>
-        <p>Al activar los servicios de localización, TEHC recolectará los datos sobre la ubicación geográfica del dispositivo móvil que está utilizando el Usuario para acceder a la Aplicación, así como también se almacenará la dirección del paradero asignado al Estudiante.</p>
-        <p>En los eventos que no se active la función de acceso a la ubicación, el Usuario no podrá visualizar el mapa con la ubicación en tiempo real del vehículo que presta el servicio de transporte escolar y la distancia con el paradero del Estudiante.</p>
-        <p>En caso de que el Usuario desee desactivar la función de acceso a la ubicación, podrá hacerlo a través del menú de ajustes del dispositivo móvil. A pesar de que el Usuario desactive esta función, podrá seguir haciendo uso de las demás funcionalidades de la Aplicación.</p>
+  <!-- 5 -->
+  <section>
+    <span class="section-number">Sección 05</span>
+    <h2>Acceso a Permisos del Dispositivo</h2>
+    <p>Para el correcto funcionamiento de la aplicación, el usuario podrá autorizar el acceso a:</p>
+    <ul class="pill-list">
+      <li>📍 Ubicación</li>
+      <li>📷 Cámara</li>
+      <li>🔔 Notificaciones</li>
+      <li>🖼️ Galería</li>
+    </ul>
+    <p style="margin-top:16px;">La información de ubicación se utilizará exclusivamente para mostrar en tiempo real el recorrido del vehículo escolar y la distancia al paradero del estudiante.</p>
+  </section>
 
-        <h2>4. POLÍTICA DE USO DE LA APLICACIÓN</h2>
-        <p>El Usuario se compromete a utilizar la Aplicación de conformidad con los presentes T&Cs, así como con la legislación vigente y aplicable en Colombia. Por lo tanto, el Usuario no utilizará la Aplicación con fines ilícitos, ni para dañar, inutilizar o deteriorar la Aplicación, o impedir su normal funcionamiento.</p>
-        <p>El Usuario se compromete a no introducir virus, macros, applets, controles ActiveX o cualquier otro dispositivo lógico o secuencia de caracteres que causen o sean susceptibles de causar cualquier tipo de alteración en la Aplicación o en los sistemas informáticos que la soportan.</p>
-        <p>TEHC se reserva el derecho de desactivar temporal o definitivamente las cuentas de Usuario que considere que están haciendo un uso inapropiado de la Aplicación o que no cumplen con estos T&Cs.</p>
+  <!-- 6 -->
+  <section>
+    <span class="section-number">Sección 06</span>
+    <h2>Derechos del Titular de los Datos</h2>
+    <p>De conformidad con la legislación colombiana, los titulares de los datos personales tienen derecho a:</p>
+    <ul class="check-list">
+      <li>Conocer, actualizar y rectificar sus datos personales.</li>
+      <li>Solicitar prueba de la autorización otorgada.</li>
+      <li>Ser informados sobre el uso que se ha dado a sus datos.</li>
+      <li>Presentar quejas ante la Superintendencia de Industria y Comercio.</li>
+      <li>Revocar la autorización y solicitar la supresión del dato cuando no se respeten los principios legales.</li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section>
+    <span class="section-number">Sección 07</span>
+    <h2>Seguridad de la Información</h2>
+    <p>TRANSPORTE ESCOLAR HC S.A.S. adopta medidas técnicas, administrativas y humanas razonables para proteger los datos personales contra pérdida, acceso no autorizado, alteración o uso indebido.</p>
+  </section>
+
+  <!-- 8 -->
+  <section>
+    <span class="section-number">Sección 08</span>
+    <h2>Procedimiento para Consultas y Reclamos</h2>
+    <p>Los titulares de los datos podrán presentar consultas o reclamos relacionados con el tratamiento de su información personal mediante los canales oficiales de la empresa.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="days">10</div>
+        <div class="label">días hábiles<br>para consultas</div>
+      </div>
+      <div class="timeline-item">
+        <div class="days">15</div>
+        <div class="label">días hábiles<br>para reclamos</div>
+      </div>
     </div>
+  </section>
+
+  <!-- 9 -->
+  <section>
+    <span class="section-number">Sección 09</span>
+    <h2>Uso de la Aplicación</h2>
+    <p>El usuario se compromete a utilizar la aplicación BO-TECH conforme a la legislación colombiana y a los presentes términos. Queda prohibido utilizar la aplicación con fines ilícitos o que afecten su funcionamiento o seguridad.</p>
+  </section>
+
+  <!-- 10 -->
+  <section>
+    <span class="section-number">Sección 10</span>
+    <h2>Vigencia de la Política</h2>
+    <p>La presente Política de Tratamiento de Datos Personales rige a partir de su publicación y podrá ser modificada por TRANSPORTE ESCOLAR HC S.A.S. cuando sea necesario para cumplir cambios legales o mejoras del servicio.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact-card">
+    <h2>¿Tienes alguna duda?</h2>
+    <p>Para consultas relacionadas con esta política o con el tratamiento de datos personales, comunícate a través de los canales oficiales de la empresa.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © TRANSPORTE ESCOLAR HC S.A.S. · NIT 901.573.292-0 · Bogotá D.C., Colombia · Plataforma BO-TECH TRACKING
+</footer>
+
 </body>
 </html>
